@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%; //now 1 rem = 10px
+}
+body {
+  font-size: 1.6rem;
+  background-color: black;
+  color: #fff;
+}
+.header {
+  background-color: #0899ba;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-add {
+  cursor: pointer;
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  /* background-color: #fff; */
+  /* width: 10rem; */
+  border-radius: 0.5rem;
+}
+.add_menu {
+  width: 20rem;
+  margin: auto;
+  margin-top: 2rem;
+  border: 2px solid #0899ba;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  left: 0;
+  width: 150px;
+  /* text-align: right;
+  clear: both;
+  float: left;
+  margin-right: 15px; */
+}
+input {
+  position: relative;
+  /* margin-left: 160px; */
+}
+.bookShelf {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: pink;
+  gap: 1rem;
+}
+.book {
+  color: #ff;
+  background-color: #0899ba;
+  width: 80%;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0.3rem solid #fff;
+}
+.bi-check {
+  color: green;
+}
+.bi-x {
+  color: red;
+}
+/* .book-contener {
+  display: flex;
+} */
+.bi-toggle-off {
+  color: red;
+}
+.bi-toggle-on {
+  color: green;
+}
