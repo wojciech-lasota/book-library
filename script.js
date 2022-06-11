@@ -26,6 +26,7 @@ const generateBookList = () => {
                     ? `<i onclick="changeBookStatus(${id})" class="bi bi-toggle-on"></i>`
                     : `<i onclick="changeBookStatus(${id})" class="bi bi-toggle-off"></i>`
                 }
+                <i onclick="deleteBook(${id})" class="bi bi-trash"></i>
             </div>
         
         `;
@@ -71,8 +72,13 @@ const changeBookStatus = (bookToChangeStatus) => {
   generateBookList();
   localStorage.setItem("bookList", JSON.stringify(bookListLocalStorage));
 };
-const update = () => {
-  const search = bookListLS.find((book) => book.id === id);
+const deleteBook = (id) => {
+  const search = bookListLocalStorage.filter((book) => book.id !== id);
+  if (search === undefined) return;
+  bookListLocalStorage = [...search];
+  console.log(id);
+  localStorage.setItem("bookList", JSON.stringify(bookListLocalStorage));
+  generateBookList();
 };
 
 // const addBookBtn = document.querySelector(".btn-add");
