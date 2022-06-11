@@ -23,8 +23,8 @@ const generateBookList = () => {
                 }</p>
                 ${
                   haveRead
-                    ? `<i onclick="changeBookStatus()" class="bi bi-toggle-on"></i>`
-                    : `<i onclick="changeBookStatus()" class="bi bi-toggle-off"></i>`
+                    ? `<i onclick="changeBookStatus(${id})" class="bi bi-toggle-on"></i>`
+                    : `<i onclick="changeBookStatus(${id})" class="bi bi-toggle-off"></i>`
                 }
             </div>
         
@@ -54,9 +54,25 @@ const addBook = () => {
     author.value = "";
     pages.value = "";
     bookStatus.checked = false;
-    localStorage.setItem("bookList", JSON.stringify(bookList));
+    localStorage.setItem("bookList", JSON.stringify(bookListLocalStorage));
     generateBookList();
   }
+};
+const changeBookStatus = (bookToChangeStatus) => {
+  const findBookIndex = bookListLocalStorage.findIndex(
+    (book) => book.id === bookToChangeStatus
+  );
+  if (findBookIndex === undefined) return;
+  const newBookStatus = bookListLocalStorage[findBookIndex];
+  newBookStatus.haveRead = newBookStatus.haveRead == true ? false : true;
+  bookListLocalStorage[findBookIndex] = newBookStatus;
+  //   console.log(bookToChangeStatus);
+  //   console.log(newBookStatus);
+  generateBookList();
+  localStorage.setItem("bookList", JSON.stringify(bookListLocalStorage));
+};
+const update = () => {
+  const search = bookListLS.find((book) => book.id === id);
 };
 
 // const addBookBtn = document.querySelector(".btn-add");
