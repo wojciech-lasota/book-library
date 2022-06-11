@@ -9,25 +9,29 @@ let bookListLocalStorage = JSON.parse(localStorage.getItem("bookList")) || [];
 
 const generateBookList = () => {
   return (bookShelf.innerHTML = bookListLocalStorage
-    .map(({ id, title, author, pages, haveRead }) => {
+    .map((book, index) => {
+      let { id, title, author, pages, haveRead } = book;
       return `
-        
-            <div id=book-id-${id} class="book">
-                <h2>${title}</h2>
-                <h3>${author}</h3>
-                <p>${pages} pages</p>
-                <p>have you read${
-                  haveRead
-                    ? `<i class="bi bi-check"></i>`
-                    : `<i class="bi bi-x"></i>`
-                }</p>
-                ${
-                  haveRead
-                    ? `<i onclick="changeBookStatus(${id})" class="bi bi-toggle-on"></i>`
-                    : `<i onclick="changeBookStatus(${id})" class="bi bi-toggle-off"></i>`
-                }
-                <i onclick="deleteBook(${id})" class="bi bi-trash"></i>
+            <div class="wrapper">
+                <h1><span class="rank">${index + 1}</span>#</h1>
+                    <div id=book-id-${id} class="book">
+                        <h2>${title}</h2>
+                        <h3>${author}</h3>
+                        <p>${pages} pages</p>
+                        <p>have you read${
+                          haveRead
+                            ? `<i class="bi bi-check"></i>`
+                            : `<i class="bi bi-x"></i>`
+                        }</p>
+                        ${
+                          haveRead
+                            ? `<i onclick="changeBookStatus(${id})" class="bi bi-toggle-on"></i>`
+                            : `<i onclick="changeBookStatus(${id})" class="bi bi-toggle-off"></i>`
+                        }
+                        <i onclick="deleteBook(${id})" class="bi bi-trash"></i>
+                    </div>
             </div>
+            
         
         `;
     })

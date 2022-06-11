@@ -58,8 +58,14 @@ input {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: pink;
+  /* background-color: pink; */
   gap: 1rem;
+}
+.wrapper {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .book {
   color: #ff;
@@ -83,4 +89,8 @@ input {
 }
 .bi-toggle-on {
   color: green;
+}
+.rank {
+  font-size: 5rem;
+  font-style: italic;
 }
