@@ -1,5 +1,10 @@
 # book-library
-small library app
+Based on 
+
 https://www.theodinproject.com/lessons/node-path-javascript-library
 
-https://wojciech-lasota.github.io/book-wishlist/
+
+
+[live prewiev](https://wojciech-lasota.github.io/book-wishlist/)
+
+<img src=/Screenshots/1.png />
